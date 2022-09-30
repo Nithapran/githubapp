@@ -8,8 +8,12 @@
 import Foundation
 import Combine
 
+enum UserServiceError: Error {
+    case UserNameNotFound
+}
+
 protocol UserServiceProtocol{
-    func getProfile(userName: String) -> Future< Profile?, Error>
+    func getProfile(userName: String) -> Future< Profile?, UserServiceError>
     func getFollowers(userName: String) -> Future< [Profile]?, Error>
     func getFollowings(userName: String) -> Future< [Profile]?, Error>
     func getRepos(userName: String) -> Future< [Repository]?, Error>
@@ -17,12 +21,15 @@ protocol UserServiceProtocol{
 
 class UserService: APIClient, UserServiceProtocol {
     
-    func getProfile(userName: String) -> Future< Profile?, Error> {
+    func getProfile(userName: String) -> Future< Profile?, UserServiceError> {
         return Future { promise in
             let request = self.getBuilder().path(.getProfile(userName)).method(.get)
             RequestMiddleware.request(request: request){ (data: Profile?,error)  in
-                if let error = error {
-                    promise(.failure(error))
+                if let error = error as? NetworkRequestError {
+                    if error == .notFound {
+                        promise(.failure(.UserNameNotFound))
+                    }
+                    
                 } else {
                     promise(.success(data))
                 }

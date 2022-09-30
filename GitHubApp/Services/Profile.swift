@@ -22,10 +22,15 @@ struct Profile: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.login = try values.decode(String.self, forKey: .login)
         self.id = try values.decode(Int.self, forKey: .id)
-        self.avatar_url = try values.decode(String.self, forKey: .avatar_url)
         
         if values.contains(.name) {
-            self.name = try values.decode(String.self, forKey: .name)
+            self.avatar_url = try values.decode(String?.self, forKey: .avatar_url)
+        } else {
+            self.avatar_url = nil
+        }
+        
+        if values.contains(.name) {
+            self.name = try values.decode(String?.self, forKey: .name)
         } else {
             self.name = nil
         }
@@ -49,13 +54,13 @@ struct Profile: Codable {
         }
         
         if values.contains(.location) {
-            self.location = try values.decode(String.self, forKey: .location)
+            self.location = try values.decode(String?.self, forKey: .location)
         } else {
             self.location = nil
         }
         
         if values.contains(.bio) {
-            self.bio = try values.decode(String.self, forKey: .bio)
+            self.bio = try values.decode(String?.self, forKey: .bio)
         } else {
             self.bio = nil
         }
