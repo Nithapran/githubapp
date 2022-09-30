@@ -16,6 +16,13 @@
 		A0039E9928E6760F00C65AD9 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039E9828E6760F00C65AD9 /* GitHubAppTests.swift */; };
 		A0039EA328E6760F00C65AD9 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EA228E6760F00C65AD9 /* GitHubAppUITests.swift */; };
 		A0039EA528E6760F00C65AD9 /* GitHubAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EA428E6760F00C65AD9 /* GitHubAppUITestsLaunchTests.swift */; };
+		A0039EB728E6777800C65AD9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EB428E6777700C65AD9 /* APIClient.swift */; };
+		A0039EB828E6777800C65AD9 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EB528E6777700C65AD9 /* APIPath.swift */; };
+		A0039EB928E6777800C65AD9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EB628E6777700C65AD9 /* UserService.swift */; };
+		A0039EBC28E6778800C65AD9 /* RequestMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EBA28E6778700C65AD9 /* RequestMiddleware.swift */; };
+		A0039EBD28E6778800C65AD9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EBB28E6778700C65AD9 /* Request.swift */; };
+		A0039EBF28E72F9E00C65AD9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EBE28E72F9E00C65AD9 /* Profile.swift */; };
+		A0039EC128E72FAB00C65AD9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039EC028E72FAB00C65AD9 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		A0039E9E28E6760F00C65AD9 /* GitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0039EA228E6760F00C65AD9 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		A0039EA428E6760F00C65AD9 /* GitHubAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A0039EB428E6777700C65AD9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		A0039EB528E6777700C65AD9 /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		A0039EB628E6777700C65AD9 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A0039EBA28E6778700C65AD9 /* RequestMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMiddleware.swift; sourceTree = "<group>"; };
+		A0039EBB28E6778700C65AD9 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A0039EBE28E72F9E00C65AD9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A0039EC028E72FAB00C65AD9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,9 @@
 		A0039E8028E6760C00C65AD9 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				A0039EB328E6773100C65AD9 /* UseCase */,
+				A0039EB228E6772800C65AD9 /* Services */,
+				A0039EB128E6771B00C65AD9 /* Networking */,
 				A0039E8128E6760C00C65AD9 /* AppDelegate.swift */,
 				A0039E8328E6760C00C65AD9 /* SceneDelegate.swift */,
 				A0039E8528E6760C00C65AD9 /* ViewController.swift */,
@@ -125,6 +142,34 @@
 				A0039EA428E6760F00C65AD9 /* GitHubAppUITestsLaunchTests.swift */,
 			);
 			path = GitHubAppUITests;
+			sourceTree = "<group>";
+		};
+		A0039EB128E6771B00C65AD9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A0039EBB28E6778700C65AD9 /* Request.swift */,
+				A0039EBA28E6778700C65AD9 /* RequestMiddleware.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A0039EB228E6772800C65AD9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A0039EB428E6777700C65AD9 /* APIClient.swift */,
+				A0039EB528E6777700C65AD9 /* APIPath.swift */,
+				A0039EB628E6777700C65AD9 /* UserService.swift */,
+				A0039EBE28E72F9E00C65AD9 /* Profile.swift */,
+				A0039EC028E72FAB00C65AD9 /* Repository.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A0039EB328E6773100C65AD9 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +303,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0039EBC28E6778800C65AD9 /* RequestMiddleware.swift in Sources */,
+				A0039EC128E72FAB00C65AD9 /* Repository.swift in Sources */,
+				A0039EBD28E6778800C65AD9 /* Request.swift in Sources */,
 				A0039E8628E6760C00C65AD9 /* ViewController.swift in Sources */,
+				A0039EB828E6777800C65AD9 /* APIPath.swift in Sources */,
 				A0039E8228E6760C00C65AD9 /* AppDelegate.swift in Sources */,
 				A0039E8428E6760C00C65AD9 /* SceneDelegate.swift in Sources */,
+				A0039EB928E6777800C65AD9 /* UserService.swift in Sources */,
+				A0039EBF28E72F9E00C65AD9 /* Profile.swift in Sources */,
+				A0039EB728E6777800C65AD9 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.github.com/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EQV48EW98J;
@@ -463,6 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.github.com/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EQV48EW98J;
