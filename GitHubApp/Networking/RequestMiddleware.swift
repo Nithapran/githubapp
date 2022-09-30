@@ -32,6 +32,7 @@ class RequestMiddleware {
                 case .forbidden:
                     break
                 case .notFound:
+                    onCompletion(nil,error)
                     break
                 case .serverError:
                     break
