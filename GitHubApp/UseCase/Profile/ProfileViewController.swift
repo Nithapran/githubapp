@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var repositoryLabel: UILabel!
     
+    @IBOutlet weak var repositoriesCountLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,24 +19,38 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var bioLabel: UILabel!
     
-    var viewModel: ProfileViewModel?
+    var viewModel: ProfileViewModel
     
-    var profile: Profile?
+    init(userName: String) {
+        self.viewModel = ProfileViewModel(service: UserService(), userName: userName)
+        super.init(nibName: "ProfileViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ProfileViewModel(service: UserService(), userName: profile?.login ?? "")
         profileHeaderView.becomeFirstResponder()
         setUpView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel?.didFetchRepositories = didFetch
+        viewModel.didFetchRepositories = didFetch
+        viewModel.didFetchProfile = didFetchProfile
         
     }
     
     func didFetch(_ data: [Repository]?,_ error: UserServiceError?) {
         self.tableView.reloadData()
+        setUpView()
+    }
+    
+    func didFetchProfile(_ data: Profile?,_ error: UserServiceError?) {
+        profileHeaderView.profile = data
+        setUpView()
     }
     
     func setUpView() {
@@ -45,9 +60,10 @@ class ProfileViewController: UIViewController {
         self.tableView.reloadData()
         
         profileHeaderView.delegate = self
-        self.setUpNavBar(profile?.login ?? "null")
-        self.bioLabel.text = profile?.bio
-        profileHeaderView.profile = profile
+        self.setUpNavBar(viewModel.profile?.login ?? "null")
+        self.bioLabel.text = viewModel.profile?.bio ?? "No bio"
+        self.repositoriesCountLabel.text = "(\(viewModel.reposotories.count))"
+        profileHeaderView.profile = viewModel.profile
         
     }
 
@@ -63,12 +79,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.reposotories.count ?? 0
+        return viewModel.reposotories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepostoryTableViewCell", for: indexPath) as! RepostoryTableViewCell
-        cell.repository = viewModel?.reposotories[indexPath.row]
+        cell.repository = viewModel.reposotories[indexPath.row]
         return cell
     }
     
@@ -79,12 +95,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ProfileViewController: ProfileHeaderViewProtocol {
     func didTapFollowerButton() {
-        let profileView = FollowViewController()
+        let profileView = FollowViewController(type: .Follower, profile: self.viewModel.profile)
         self.navigationController?.pushViewController(profileView, animated: true)
     }
     
     func didTapFollowingButton() {
-        
+        let profileView = FollowViewController(type: .Follwing, profile: self.viewModel.profile)
+        self.navigationController?.pushViewController(profileView, animated: true)
     }
     
     

@@ -21,22 +21,18 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.setUpNavBar("",true,false)
         searchField.becomeFirstResponder()
-        viwModel.didFetchProfile = didFetch
     }
     
-    func didFetch(_ data: Profile?,_ error: UserServiceError?) {
-        let profileView = ProfileViewController()
-        profileView.profile = data
+    
+
+    @IBAction func searchButtonClicked(_ sender: Any) {
+        
+        let profileView = ProfileViewController(userName: searchField.text ?? "")
         let nav = UINavigationController(rootViewController: profileView)
         nav.view.backgroundColor = .white
         
         
         self.navigationController?.present(nav, animated: true)
-    }
-
-    @IBAction func searchButtonClicked(_ sender: Any) {
-        
-        viwModel.getGitHubProfile(searchText: searchField.text ?? "")
     }
 }
 

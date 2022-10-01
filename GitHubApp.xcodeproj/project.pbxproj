@@ -29,6 +29,11 @@
 		A0039ED728E75A8E00C65AD9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0039ED528E75A8E00C65AD9 /* ProfileViewController.xib */; };
 		A0039ED928E75AAA00C65AD9 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039ED828E75AAA00C65AD9 /* ProfileHeaderView.swift */; };
 		A0039EDB28E75ABA00C65AD9 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0039EDA28E75ABA00C65AD9 /* ProfileHeaderView.xib */; };
+		A018A99628E7EF9300A67049 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A99528E7EF9300A67049 /* UIView+Extension.swift */; };
+		A018A99928E7F49700A67049 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A018A99828E7F49700A67049 /* SDWebImage */; };
+		A018A99C28E7FA6900A67049 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A99A28E7FA6900A67049 /* UserTableViewCell.swift */; };
+		A018A99D28E7FA6900A67049 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A018A99B28E7FA6900A67049 /* UserTableViewCell.xib */; };
+		A018A9A028E7FE5400A67049 /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018A99F28E7FE5400A67049 /* FollowViewModel.swift */; };
 		A054881D28E7E4EC00F88AAD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054881C28E7E4EC00F88AAD /* ProfileViewModel.swift */; };
 		A09C6AF928E7695D00126D22 /* RepostoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C6AF728E7695D00126D22 /* RepostoryTableViewCell.swift */; };
 		A09C6AFA28E7695D00126D22 /* RepostoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09C6AF828E7695D00126D22 /* RepostoryTableViewCell.xib */; };
@@ -80,6 +85,10 @@
 		A0039ED528E75A8E00C65AD9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		A0039ED828E75AAA00C65AD9 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		A0039EDA28E75ABA00C65AD9 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		A018A99528E7EF9300A67049 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A018A99A28E7FA6900A67049 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		A018A99B28E7FA6900A67049 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		A018A99F28E7FE5400A67049 /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 		A054881C28E7E4EC00F88AAD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A09C6AF728E7695D00126D22 /* RepostoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostoryTableViewCell.swift; sourceTree = "<group>"; };
 		A09C6AF828E7695D00126D22 /* RepostoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepostoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -92,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A018A99928E7F49700A67049 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				A0039ECA28E744B800C65AD9 /* UIViewController+Extension.swift */,
+				A018A99528E7EF9300A67049 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,10 +239,21 @@
 		A0039ED328E75A5A00C65AD9 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				A018A9A128E8012D00A67049 /* Reusables */,
 				A09C6AFB28E77A4800126D22 /* FollowViewController.swift */,
 				A09C6AFC28E77A4800126D22 /* FollowViewController.xib */,
+				A018A99F28E7FE5400A67049 /* FollowViewModel.swift */,
 			);
 			path = Follow;
+			sourceTree = "<group>";
+		};
+		A018A9A128E8012D00A67049 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				A018A99A28E7FA6900A67049 /* UserTableViewCell.swift */,
+				A018A99B28E7FA6900A67049 /* UserTableViewCell.xib */,
+			);
+			path = Reusables;
 			sourceTree = "<group>";
 		};
 		A054881B28E7E4CD00F88AAD /* Reusables */ = {
@@ -261,6 +283,9 @@
 			dependencies = (
 			);
 			name = GitHubApp;
+			packageProductDependencies = (
+				A018A99828E7F49700A67049 /* SDWebImage */,
+			);
 			productName = GitHubApp;
 			productReference = A0039E7E28E6760C00C65AD9 /* GitHubApp.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +358,9 @@
 				Base,
 			);
 			mainGroup = A0039E7528E6760C00C65AD9;
+			packageReferences = (
+				A018A99728E7F49600A67049 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = A0039E7F28E6760C00C65AD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A018A99D28E7FA6900A67049 /* UserTableViewCell.xib in Resources */,
 				A0039E8E28E6760F00C65AD9 /* LaunchScreen.storyboard in Resources */,
 				A0039E8B28E6760F00C65AD9 /* Assets.xcassets in Resources */,
 				A09C6AFE28E77A4800126D22 /* FollowViewController.xib in Resources */,
@@ -383,6 +412,7 @@
 				A0039EC428E7440800C65AD9 /* SearchViewController.swift in Sources */,
 				A0039ECB28E744B800C65AD9 /* UIViewController+Extension.swift in Sources */,
 				A0039EBC28E6778800C65AD9 /* RequestMiddleware.swift in Sources */,
+				A018A9A028E7FE5400A67049 /* FollowViewModel.swift in Sources */,
 				A0039EC128E72FAB00C65AD9 /* Repository.swift in Sources */,
 				A0039EBD28E6778800C65AD9 /* Request.swift in Sources */,
 				A0039ED028E748CB00C65AD9 /* SearchViewModel.swift in Sources */,
@@ -392,6 +422,8 @@
 				A0039E8228E6760C00C65AD9 /* AppDelegate.swift in Sources */,
 				A0039E8428E6760C00C65AD9 /* SceneDelegate.swift in Sources */,
 				A0039EB928E6777800C65AD9 /* UserService.swift in Sources */,
+				A018A99C28E7FA6900A67049 /* UserTableViewCell.swift in Sources */,
+				A018A99628E7EF9300A67049 /* UIView+Extension.swift in Sources */,
 				A0039ED628E75A8E00C65AD9 /* ProfileViewController.swift in Sources */,
 				A054881D28E7E4EC00F88AAD /* ProfileViewModel.swift in Sources */,
 				A0039ED928E75AAA00C65AD9 /* ProfileHeaderView.swift in Sources */,
@@ -730,6 +762,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A018A99728E7F49600A67049 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A018A99828E7F49700A67049 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A018A99728E7F49600A67049 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A0039E7628E6760C00C65AD9 /* Project object */;
 }
