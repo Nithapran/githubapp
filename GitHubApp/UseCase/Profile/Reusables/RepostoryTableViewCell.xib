@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepostoryTableViewCell" rowHeight="105" id="KGk-i7-Jjw" customClass="RepostoryTableViewCell" customModule="GitHubApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J84-p1-atR">
+                        <rect key="frame" x="2" y="2" width="316" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harvest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xei-2C-o4g">
+                                <rect key="frame" x="10" y="10" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Lorem Ipsum is simply dummy text of the printing " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa9-vd-Kbw">
+                                <rect key="frame" x="10" y="41" width="296" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.52134622789999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xei-2C-o4g" firstAttribute="leading" secondItem="J84-p1-atR" secondAttribute="leading" constant="10" id="5tq-Vq-ENY"/>
+                            <constraint firstAttribute="bottom" secondItem="Sa9-vd-Kbw" secondAttribute="bottom" constant="15" id="8Is-4s-hvf"/>
+                            <constraint firstAttribute="trailing" secondItem="Sa9-vd-Kbw" secondAttribute="trailing" constant="10" id="VGz-QO-H4w"/>
+                            <constraint firstItem="Sa9-vd-Kbw" firstAttribute="leading" secondItem="J84-p1-atR" secondAttribute="leading" constant="10" id="c3v-bu-abV"/>
+                            <constraint firstItem="Sa9-vd-Kbw" firstAttribute="top" secondItem="Xei-2C-o4g" secondAttribute="bottom" constant="10" id="jBx-9t-iuA"/>
+                            <constraint firstItem="Xei-2C-o4g" firstAttribute="top" secondItem="J84-p1-atR" secondAttribute="top" constant="10" id="vQm-DP-bl1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="J84-p1-atR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="D5V-LS-nCx"/>
+                    <constraint firstAttribute="trailing" secondItem="J84-p1-atR" secondAttribute="trailing" constant="2" id="S4G-hS-DFN"/>
+                    <constraint firstItem="J84-p1-atR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="hEj-8q-NPV"/>
+                    <constraint firstAttribute="bottom" secondItem="J84-p1-atR" secondAttribute="bottom" constant="11" id="oKg-4F-Bpi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="container" destination="J84-p1-atR" id="r9s-jK-kjg"/>
+                <outlet property="repositoryDescription" destination="Sa9-vd-Kbw" id="7OR-pB-sjD"/>
+                <outlet property="repositoryName" destination="Xei-2C-o4g" id="Ujo-yJ-6lU"/>
+            </connections>
+            <point key="canvasLocation" x="-18.46153846153846" y="10.308056872037914"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -29,6 +29,11 @@
 		A0039ED728E75A8E00C65AD9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0039ED528E75A8E00C65AD9 /* ProfileViewController.xib */; };
 		A0039ED928E75AAA00C65AD9 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0039ED828E75AAA00C65AD9 /* ProfileHeaderView.swift */; };
 		A0039EDB28E75ABA00C65AD9 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0039EDA28E75ABA00C65AD9 /* ProfileHeaderView.xib */; };
+		A054881D28E7E4EC00F88AAD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054881C28E7E4EC00F88AAD /* ProfileViewModel.swift */; };
+		A09C6AF928E7695D00126D22 /* RepostoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C6AF728E7695D00126D22 /* RepostoryTableViewCell.swift */; };
+		A09C6AFA28E7695D00126D22 /* RepostoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09C6AF828E7695D00126D22 /* RepostoryTableViewCell.xib */; };
+		A09C6AFD28E77A4800126D22 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C6AFB28E77A4800126D22 /* FollowViewController.swift */; };
+		A09C6AFE28E77A4800126D22 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09C6AFC28E77A4800126D22 /* FollowViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		A0039ED528E75A8E00C65AD9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		A0039ED828E75AAA00C65AD9 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		A0039EDA28E75ABA00C65AD9 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		A054881C28E7E4EC00F88AAD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A09C6AF728E7695D00126D22 /* RepostoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostoryTableViewCell.swift; sourceTree = "<group>"; };
+		A09C6AF828E7695D00126D22 /* RepostoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepostoryTableViewCell.xib; sourceTree = "<group>"; };
+		A09C6AFB28E77A4800126D22 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		A09C6AFC28E77A4800126D22 /* FollowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,10 +217,10 @@
 		A0039ED228E75A2A00C65AD9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A054881B28E7E4CD00F88AAD /* Reusables */,
 				A0039ED428E75A8E00C65AD9 /* ProfileViewController.swift */,
 				A0039ED528E75A8E00C65AD9 /* ProfileViewController.xib */,
-				A0039ED828E75AAA00C65AD9 /* ProfileHeaderView.swift */,
-				A0039EDA28E75ABA00C65AD9 /* ProfileHeaderView.xib */,
+				A054881C28E7E4EC00F88AAD /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -218,8 +228,21 @@
 		A0039ED328E75A5A00C65AD9 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				A09C6AFB28E77A4800126D22 /* FollowViewController.swift */,
+				A09C6AFC28E77A4800126D22 /* FollowViewController.xib */,
 			);
 			path = Follow;
+			sourceTree = "<group>";
+		};
+		A054881B28E7E4CD00F88AAD /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				A0039ED828E75AAA00C65AD9 /* ProfileHeaderView.swift */,
+				A0039EDA28E75ABA00C65AD9 /* ProfileHeaderView.xib */,
+				A09C6AF728E7695D00126D22 /* RepostoryTableViewCell.swift */,
+				A09C6AF828E7695D00126D22 /* RepostoryTableViewCell.xib */,
+			);
+			path = Reusables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,9 +351,11 @@
 			files = (
 				A0039E8E28E6760F00C65AD9 /* LaunchScreen.storyboard in Resources */,
 				A0039E8B28E6760F00C65AD9 /* Assets.xcassets in Resources */,
+				A09C6AFE28E77A4800126D22 /* FollowViewController.xib in Resources */,
 				A0039ED728E75A8E00C65AD9 /* ProfileViewController.xib in Resources */,
 				A0039EC528E7440800C65AD9 /* SearchViewController.xib in Resources */,
 				A0039EDB28E75ABA00C65AD9 /* ProfileHeaderView.xib in Resources */,
+				A09C6AFA28E7695D00126D22 /* RepostoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +387,13 @@
 				A0039EBD28E6778800C65AD9 /* Request.swift in Sources */,
 				A0039ED028E748CB00C65AD9 /* SearchViewModel.swift in Sources */,
 				A0039EB828E6777800C65AD9 /* APIPath.swift in Sources */,
+				A09C6AFD28E77A4800126D22 /* FollowViewController.swift in Sources */,
+				A09C6AF928E7695D00126D22 /* RepostoryTableViewCell.swift in Sources */,
 				A0039E8228E6760C00C65AD9 /* AppDelegate.swift in Sources */,
 				A0039E8428E6760C00C65AD9 /* SceneDelegate.swift in Sources */,
 				A0039EB928E6777800C65AD9 /* UserService.swift in Sources */,
 				A0039ED628E75A8E00C65AD9 /* ProfileViewController.swift in Sources */,
+				A054881D28E7E4EC00F88AAD /* ProfileViewModel.swift in Sources */,
 				A0039ED928E75AAA00C65AD9 /* ProfileHeaderView.swift in Sources */,
 				A0039EBF28E72F9E00C65AD9 /* Profile.swift in Sources */,
 				A0039EB728E6777800C65AD9 /* APIClient.swift in Sources */,
