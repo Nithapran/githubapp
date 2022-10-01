@@ -8,11 +8,29 @@
 import Foundation
 import UIKit
 
+protocol ProfileHeaderViewProtocol: AnyObject {
+    func didTapFollowerButton()
+    func didTapFollowingButton()
+}
+
 
 @IBDesignable
 final class ProfileHeaderView: UIView {
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var followerLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    
+    weak var delegate: ProfileHeaderViewProtocol?
     
     let nibName = "ProfileHeaderView"
+    
+    var profile: Profile? {
+        didSet {
+            setUpView(data: profile)
+        }
+    }
     
     @IBOutlet weak var container: UIView!
     required init?(coder aDecoder: NSCoder) {
@@ -48,5 +66,24 @@ final class ProfileHeaderView: UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
+    func setUpView(data: Profile?) {
+        self.nameLabel.text = profile?.name
+        self.followerLabel.text = String(profile?.followers ?? 0)
+        self.followingLabel.text = String(profile?.following ?? 0)
+        self.imageView.layer.cornerRadius = 15
+    }
+    
+    
+    @IBAction func followerButtonClicked(_ sender: Any) {
+        delegate?.didTapFollowerButton()
+    }
+    
+    @IBAction func followingButtonClicked(_ sender: Any) {
+        delegate?.didTapFollowingButton()
+    }
+    
+    @IBAction func buttsdfsf(_ sender: Any) {
+        print("asdasd")
+    }
 }
 

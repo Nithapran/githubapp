@@ -20,10 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        let navigationController = UINavigationController()
-        navigationController.setUpNavBar()
         let vc = SearchViewController()
-        navigationController.viewControllers = [vc]
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.view.backgroundColor = .white
+        navigationController.setUpNavBar("",true,false)
         window?.rootViewController = navigationController
     }
 

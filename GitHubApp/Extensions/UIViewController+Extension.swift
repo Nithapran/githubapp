@@ -12,6 +12,7 @@ extension UIViewController {
     func setUpNavBar(_ title: String = "",_ isHidden: Bool = false,_ prefersLargeTitles: Bool = false) {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+        navigationController?.navigationBar.isHidden = isHidden
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         if !prefersLargeTitles {
             navigationItem.largeTitleDisplayMode = .never

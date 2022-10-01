@@ -16,15 +16,22 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
+        self.setUpNavBar("",true,false)
         searchField.becomeFirstResponder()
         viwModel.didFetchProfile = didFetch
     }
     
     func didFetch(_ data: Profile?,_ error: UserServiceError?) {
         let profileView = ProfileViewController()
-        self.navigationController?.pushViewController(profileView, animated: true)
+        profileView.profile = data
+        let nav = UINavigationController(rootViewController: profileView)
+        nav.view.backgroundColor = .white
+        
+        
+        self.navigationController?.present(nav, animated: true)
     }
 
     @IBAction func searchButtonClicked(_ sender: Any) {
