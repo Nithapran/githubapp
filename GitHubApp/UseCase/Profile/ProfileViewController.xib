@@ -3,6 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,7 @@
             <connections>
                 <outlet property="bioLabel" destination="EMu-qw-DNZ" id="yys-CM-RTs"/>
                 <outlet property="profileHeaderView" destination="7CV-Bd-1r6" id="gaR-DG-pHs"/>
+                <outlet property="repositoriesCountLabel" destination="qz8-nd-Qx7" id="siB-67-kcC"/>
                 <outlet property="repositoryLabel" destination="jZ0-A0-Wdr" id="Hka-C2-TXa"/>
                 <outlet property="tableView" destination="0N9-ao-aBa" id="WtB-bZ-00H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="H6B-78-gP5"/>
@@ -44,19 +46,27 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0N9-ao-aBa">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0N9-ao-aBa">
                             <rect key="frame" x="10" y="204" width="394" height="604"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(13)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qz8-nd-Qx7">
+                            <rect key="frame" x="108" y="171" width="27" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" name="AccentColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="jZ0-A0-Wdr" firstAttribute="leading" secondItem="cvH-7U-14t" secondAttribute="leading" constant="10" id="2Yi-O3-Y9Z"/>
                         <constraint firstItem="0N9-ao-aBa" firstAttribute="leading" secondItem="cvH-7U-14t" secondAttribute="leading" constant="10" id="3Nf-N0-Kyb"/>
+                        <constraint firstItem="qz8-nd-Qx7" firstAttribute="leading" secondItem="jZ0-A0-Wdr" secondAttribute="trailing" constant="10" id="3VK-56-6Db"/>
                         <constraint firstItem="7CV-Bd-1r6" firstAttribute="leading" secondItem="cvH-7U-14t" secondAttribute="leading" id="EbU-JU-50y"/>
                         <constraint firstAttribute="trailing" secondItem="7CV-Bd-1r6" secondAttribute="trailing" id="F6A-EP-L8t"/>
                         <constraint firstItem="EMu-qw-DNZ" firstAttribute="leading" secondItem="cvH-7U-14t" secondAttribute="leading" constant="10" id="OUB-fB-g23"/>
                         <constraint firstAttribute="trailing" secondItem="0N9-ao-aBa" secondAttribute="trailing" constant="10" id="SFr-UD-UDu"/>
+                        <constraint firstItem="qz8-nd-Qx7" firstAttribute="centerY" secondItem="jZ0-A0-Wdr" secondAttribute="centerY" id="T4E-ZT-9RG"/>
                         <constraint firstAttribute="bottom" secondItem="0N9-ao-aBa" secondAttribute="bottom" constant="10" id="d1b-2J-Ych"/>
                         <constraint firstItem="0N9-ao-aBa" firstAttribute="top" secondItem="jZ0-A0-Wdr" secondAttribute="bottom" constant="15" id="mnv-vs-wb4"/>
                         <constraint firstItem="jZ0-A0-Wdr" firstAttribute="top" secondItem="EMu-qw-DNZ" secondAttribute="bottom" constant="15" id="qZC-gT-kyK"/>
@@ -78,6 +88,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.3529999852180481" green="0.6470000147819519" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

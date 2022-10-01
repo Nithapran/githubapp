@@ -23,7 +23,7 @@ struct Profile: Codable {
         self.login = try values.decode(String.self, forKey: .login)
         self.id = try values.decode(Int.self, forKey: .id)
         
-        if values.contains(.name) {
+        if values.contains(.avatar_url) {
             self.avatar_url = try values.decode(String?.self, forKey: .avatar_url)
         } else {
             self.avatar_url = nil
@@ -36,19 +36,19 @@ struct Profile: Codable {
         }
         
         if values.contains(.followers) {
-            self.followers = try values.decode(Int.self, forKey: .followers)
+            self.followers = try values.decode(Int?.self, forKey: .followers)
         } else {
             self.followers = nil
         }
         
         if values.contains(.following) {
-            self.following = try values.decode(Int.self, forKey: .following)
+            self.following = try values.decode(Int?.self, forKey: .following)
         } else {
             self.following = nil
         }
         
         if values.contains(.public_repos) {
-            self.public_repos = try values.decode(Int.self, forKey: .public_repos)
+            self.public_repos = try values.decode(Int?.self, forKey: .public_repos)
         } else {
             self.public_repos = nil
         }

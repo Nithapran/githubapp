@@ -19,10 +19,10 @@ class RepostoryTableViewCell: UITableViewCell {
     }
     
     func setUpView(data: Repository?) {
-        self.repositoryName.text = data?.name
-        self.repositoryDescription.text = data?.description
-        container.layer.cornerRadius = 5
-        
+        self.repositoryName.text = data?.name ?? "No title"
+        self.repositoryDescription.text = data?.description ?? "No description"
+        container.layer.cornerRadius = 15
+        container.addStandardShadow()
     }
 
     override func awakeFromNib() {

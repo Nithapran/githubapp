@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import SDWebImage
+
 
 protocol ProfileHeaderViewProtocol: AnyObject {
     func didTapFollowerButton()
@@ -71,6 +73,7 @@ final class ProfileHeaderView: UIView {
         self.followerLabel.text = String(profile?.followers ?? 0)
         self.followingLabel.text = String(profile?.following ?? 0)
         self.imageView.layer.cornerRadius = 15
+        imageView.sd_setImage(with: URL(string: profile?.avatar_url ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
     }
     
     
