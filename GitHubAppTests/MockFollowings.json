@@ -1,0 +1,42 @@
+[
+    {
+        "login": "julianduque",
+        "id": 733877,
+        "node_id": "MDQ6VXNlcjczMzg3Nw==",
+        "avatar_url": "https://avatars.githubusercontent.com/u/733877?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/julianduque",
+        "html_url": "https://github.com/julianduque",
+        "followers_url": "https://api.github.com/users/julianduque/followers",
+        "following_url": "https://api.github.com/users/julianduque/following{/other_user}",
+        "gists_url": "https://api.github.com/users/julianduque/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/julianduque/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/julianduque/subscriptions",
+        "organizations_url": "https://api.github.com/users/julianduque/orgs",
+        "repos_url": "https://api.github.com/users/julianduque/repos",
+        "events_url": "https://api.github.com/users/julianduque/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/julianduque/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    {
+        "login": "Verurteilt",
+        "id": 2994786,
+        "node_id": "MDQ6VXNlcjI5OTQ3ODY=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/2994786?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Verurteilt",
+        "html_url": "https://github.com/Verurteilt",
+        "followers_url": "https://api.github.com/users/Verurteilt/followers",
+        "following_url": "https://api.github.com/users/Verurteilt/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Verurteilt/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Verurteilt/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Verurteilt/subscriptions",
+        "organizations_url": "https://api.github.com/users/Verurteilt/orgs",
+        "repos_url": "https://api.github.com/users/Verurteilt/repos",
+        "events_url": "https://api.github.com/users/Verurteilt/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Verurteilt/received_events",
+        "type": "User",
+        "site_admin": false
+    }
+]
