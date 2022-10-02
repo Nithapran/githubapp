@@ -46,7 +46,11 @@ class ProfileViewModel {
         profile
             .receive(on: RunLoop.main)
             .sink { error in
-                
+                switch error {
+                case .failure(let err):
+                    self.didFetchProfile?(nil,err)
+                default: break
+                }
                 
             } receiveValue: { result in
                 self.profile = result

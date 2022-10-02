@@ -49,6 +49,15 @@ class ProfileViewController: UIViewController {
     }
     
     func didFetchProfile(_ data: Profile?,_ error: UserServiceError?) {
+        if let error = error {
+            switch error {
+            case .UserNameNotFound:
+                self.dismiss(animated: true) {
+                    Helper.shared.showError(message: "User not found")
+                }
+            }
+            return
+        }
         profileHeaderView.profile = data
         setUpView()
     }

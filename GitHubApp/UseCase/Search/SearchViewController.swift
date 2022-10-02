@@ -11,8 +11,6 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchField: UITextField!
     
-    var viwModel = SearchViewModel(service: UserService())
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
